@@ -46,3 +46,6 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         selectedPlayer.addWin()
         otherPlayer.addLoss()
 
+        selectedPlayer.addPoints(2500)
+        otherPlayer.addPoints(2500)
+
