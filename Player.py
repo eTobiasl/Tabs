@@ -29,9 +29,11 @@ class Player:
 
     def addWin(self):
         self.wins += 1
+        self.points += 2500
 
     def addLoss(self):
         self.losses += 1
+        self.points += 3000
     
     def giveFaction(self, faction):
         self.faction = faction

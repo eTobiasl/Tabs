@@ -4,8 +4,8 @@ from wheels import *
 print("\n"*2+"="*30+" TABS point counter " + "="*30+"\n"*2)
 
 
-p1 = Player(input("[Player 1] name\n: "))
-p2 = Player(input("[Player 2] name\n: "))
+p1 = Player(input("[Player 1] name:\n"))
+p2 = Player(input("[Player 2] name:\n"))
 p1.addPoints(2500)
 p2.addPoints(2500)
 
@@ -19,10 +19,10 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
     
     userInput = input("Select from the menu:\n")
 
-    print("\n[0] - Player1 ("+p1.getName()+")\n[1] - Player2 ("+p2.getName()+")")
-    if (userInput == "0") or (userInput == "5") or (userInput == "1"):
+    if userInput == "0" or userInput == "5" or userInput == "1":
         selectedPlayerInput = "0"
     else:
+        print("\n[0] - Player1 ("+p1.getName()+")\n[1] - Player2 ("+p2.getName()+")")
         selectedPlayerInput = input("Select which player to affect:\n")
 
     if selectedPlayerInput == "0":
@@ -35,7 +35,7 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
     if userInput == "0":
         print("\n== "+selectedPlayer.getName()+" ==\nPoints: "+str(selectedPlayer.getPoints())+"\nWins: "+str(selectedPlayer.getWins())+"\nLosses: "+str(selectedPlayer.getLosses()))
         print("\n== "+otherPlayer.getName()+" ==\nPoints: "+str(otherPlayer.getPoints())+"\nWins: "+str(otherPlayer.getWins())+"\nLosses: "+str(otherPlayer.getLosses()))
-        input("-- Press enter to continue --")
+        input("-- Press enter to continue --\n")
     
     elif userInput == "1":
         print("")
@@ -63,7 +63,7 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         else:
             print("Nothing in particular")
         
-        roundEndInput = input("\nRound over? Type anything to continue")
+        roundEndInput = input("\n-- Round over, press enter to continue --\n")
 
         p1.resetFaction()
         p2.resetFaction()
@@ -71,6 +71,25 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         p2.setReset(False)
         p1.resetUnits()
         p2.resetUnits()
+        
+        roundWinner = input("\n== Who won the round? ==\n[0] - Player 1 ("+str(p1.getName())+")\n[1] - Player 2 ("+str(p2.getName())+")\n")
+        if roundWinner == "0":
+            roundWinnerPlayer = p1
+            roundLoserPlayer = p2
+        elif roundWinner == "1":
+             roundWinnerPlayer = p2
+             roundLoserPlayer = p1
+
+        roundWinnerPlayer.addWin()
+        roundLoserPlayer.addLoss()
+        print(str(roundWinnerPlayer.getName()) + " won the round!")
+       
+        
+        input("-- Press enter to continue --\n")
+
+        time.sleep(1)
+        Wheel_Of_Losers(roundLoserPlayer, roundWinnerPlayer)
+        lastloss = roundLoserPlayer
 
     elif userInput == "2":
         addedPoints = input("\nAdd points ("+selectedPlayer.getName()+"):\n")
@@ -81,7 +100,7 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         selectedPlayer.subtractPoints(int(subtractedPoints))
 
     elif userInput == "4":
-        print(str(selectedPlayer.name) + " wins!")
+        print(str(selectedPlayer.getName()) + " wins!")
         if selectedPlayer.getWins() == 5:
             print(str(selectedPlayer.getName()) + " wins the game!")
             userInput = input("Continue? \n[0]: Yes \n[1] No")
@@ -91,14 +110,19 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         else:
             selectedPlayer.addWin()
             otherPlayer.addLoss()
-            selectedPlayer.addPoints(2500)
-            otherPlayer.addPoints(3000)
 
             time.sleep(1)
             Wheel_Of_Losers(otherPlayer, selectedPlayer)
-            lastloss = selectedPlayer
+            lastloss = otherPlayer
 
     elif userInput == "5":
         print("Exiting...")
+        print(p1.getName() + "ended the game with "+ p1.getWins() + "wins and " + p1.getLosses() + "lossses")
+        print(p2.getName() + "ended the game with "+ p2.getWins() + "wins and " + p2.getLosses() + "lossses")
+
+        if p1.getWins() > p2.getWins():
+            print(p1.getName() + "won most rounds with" + p1.getWins() + "wins!")
+        else:
+            print(p2.getName() + "won most rounds with" + p2.getWins() + "wins!")
         break
 
