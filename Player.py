@@ -5,6 +5,9 @@ class Player:
         self.name = name
         self.wins = 0
         self.losses = 0
+        self.faction = None
+        self.units = []
+        self.reset = False
 
     def getPoints(self):
         return self.points
@@ -29,4 +32,30 @@ class Player:
 
     def addLoss(self):
         self.losses += 1
-        self.points += 500
+    
+    def giveFaction(self, faction):
+        self.faction = faction
+    
+    def resetFaction(self):
+        self.faction = None
+    
+    def getFaction(self):
+        return self.faction
+
+    def setUnits(self, unit):
+        self.units.append(unit)
+    
+    def getUnits(self):
+        return self.units
+    
+    def resetUnits(self):
+        self.units = []
+
+    def setReset(self, declaration):
+        self.reset = declaration
+
+    def getReset(self):
+        if self.reset:
+            return "can reset"
+        else:
+            return "can't reset"
