@@ -22,7 +22,7 @@
 <h3 align="center">Tabs Point Counter</h3>
 
   <p align="center">
-    project_description
+    A tool to assist one in playing TABS with 2 players
     <br />
     <a href="https://github.com/eTobiasl/Tabs"><strong>Explore the docs »</strong></a>
   </p>
