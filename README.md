@@ -9,14 +9,13 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/eTobiasl/Tabs">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -25,7 +24,7 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/eTobiasl/Tabs"><strong>Explore the docs »</strong></a>
   </p>
 </div>
 
