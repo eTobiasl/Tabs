@@ -72,10 +72,7 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
+- N/A
 
 See the [open issues](https://github.com/eTobiasl/Tabs/issues) for a full list of proposed features (and known issues).
 
