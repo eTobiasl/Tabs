@@ -9,23 +9,22 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/eTobiasl/Tabs">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Tabs Point Counter</h3>
 
   <p align="center">
-    project_description
+    A tool to assist one in playing TABS with 2 players
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/eTobiasl/Tabs"><strong>Explore the docs »</strong></a>
   </p>
 </div>
 
@@ -73,10 +72,7 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
+- N/A
 
 See the [open issues](https://github.com/eTobiasl/Tabs/issues) for a full list of proposed features (and known issues).
 
