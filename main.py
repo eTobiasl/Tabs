@@ -117,12 +117,12 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
 
     elif userInput == "5":
         print("Exiting...")
-        print(p1.getName() + "ended the game with "+ p1.getWins() + "wins and " + p1.getLosses() + "lossses")
-        print(p2.getName() + "ended the game with "+ p2.getWins() + "wins and " + p2.getLosses() + "lossses")
+        print("\n"+p1.getName() + "Ended the game with ["+ str(p1.getWins()) + "] wins and [" + str(p1.getLosses()) + "] lossses")
+        print(p2.getName() + "Ended the game with ["+ str(p2.getWins()) + "] wins and [" + str(p2.getLosses()) + "] lossses")
 
         if p1.getWins() > p2.getWins():
-            print(p1.getName() + "won most rounds with" + p1.getWins() + "wins!")
+            print(p1.getName() + " Won most rounds with [" + str(p1.getWins()) + "] wins!")
         else:
-            print(p2.getName() + "won most rounds with" + p2.getWins() + "wins!")
+            print(p2.getName() + " Won most rounds with [" + str(p2.getWins()) + "] wins!")
         break
 
