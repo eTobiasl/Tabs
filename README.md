@@ -19,7 +19,7 @@
     <img src="ProjectPhoto.jpg" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Tabs Point Counter</h3>
+<h3 align="center">TABS Multiplayer Assistant</h3>
 
   <p align="center">
     A tool to assist one in playing TABS with 2 players
