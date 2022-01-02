@@ -114,7 +114,7 @@ Don't forget to give the project a star! Thanks again!
 [issues-shield]: https://img.shields.io/github/issues/eTobiasl/Tabs.svg?style=for-the-badge
 [issues-url]: https://github.com/eTobiasl/Tabs/issues
 [license-shield]: https://img.shields.io/github/license/eTobiasl/Tabs.svg?style=for-the-badge
-[license-url]: https://github.com/eTobiasl/Tabs/blob/master/LICENSE.txt
+[license-url]: https://github.com/eTobiasl/Tabs/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/erikTobiasLeirvik
 [product-screenshot]: ProjectPhoto.jpg
