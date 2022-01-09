@@ -64,7 +64,8 @@
 
 ### Built With
 
-* Python
+* [openpyxl](https://openpyxl.readthedocs.io/)
+* [pandas](https://pandas.pydata.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
