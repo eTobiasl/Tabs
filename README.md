@@ -16,7 +16,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/eTobiasl/Tabs">
-    <img src="ProjectPhoto.jpg" alt="Logo" width="80" height="80">
+    <img src="images/ProjectPhoto.jpg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">TABS Multiplayer Assistant</h3>
@@ -117,4 +117,4 @@ Don't forget to give the project a star! Thanks again!
 [license-url]: https://github.com/eTobiasl/Tabs/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/erikTobiasLeirvik
-[product-screenshot]: ProjectPhoto.jpg
+[product-screenshot]: images/ProjectPhoto.jpg
