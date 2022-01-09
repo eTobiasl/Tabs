@@ -12,7 +12,6 @@
 
 
 
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/eTobiasl/Tabs">
@@ -30,7 +29,6 @@
 
 
 
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -53,7 +51,6 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
@@ -69,8 +66,16 @@
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Usage
 
-<!-- ROADMAP -->
+To use this program simply run the file "main.py"
+
+_Documentation coming soon_
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
 ## Roadmap
 
 - N/A
@@ -81,7 +86,6 @@ See the [open issues](https://github.com/eTobiasl/Tabs/issues) for a full list o
 
 
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
