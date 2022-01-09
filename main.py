@@ -1,15 +1,25 @@
 from Player import Player
 from wheels import *
+import random
 
-print("\n"*2+"="*30+" TABS point counter " + "="*30+"\n"*2)
+print("\n"*2+"="*30+" TABS multiplayer assistant " + "="*30+"\n"*2)
 
 
-p1 = Player(input("[Player 1] name:\n"))
-p2 = Player(input("[Player 2] name:\n"))
+p1 = Player(input("[First player] name:\n"))
+p2 = Player(input("[Second player] name:\n"))
+
 p1.addPoints(2500)
 p2.addPoints(2500)
 
-maxWins = 5
+startingPlayer = random.randint(0,1)
+
+if startingPlayer == 0:
+    p1.setStartingPlayer()
+else:
+    p2.setStartingPlayer()
+
+
+maxWins = int(input("How many rounds to win?\n"))
 
 
 while p1.getWins() < maxWins and p2.getWins() < maxWins:
@@ -63,7 +73,12 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         else:
             print("Nothing in particular")
         
-        roundEndInput = input("\n-- Round over, press enter to continue --\n")
+        if p1.checkIfPlayerStarts():
+            print("\n["+p1.getName()+"] has to place their units first")
+        elif p2.checkIfPlayerStarts():
+            print("\n["+p2.getName()+"] has to place their units first")
+
+        roundEndInput = input("-- Round over? press enter to continue --\n")
 
         p1.resetFaction()
         p2.resetFaction()

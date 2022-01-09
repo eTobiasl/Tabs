@@ -8,6 +8,7 @@ class Player:
         self.faction = None
         self.units = []
         self.reset = False
+        self.startsNextRound = False
 
     def getPoints(self):
         return self.points
@@ -30,10 +31,12 @@ class Player:
     def addWin(self):
         self.wins += 1
         self.points += 2500
+        self.startsNextRound = True
 
     def addLoss(self):
         self.losses += 1
         self.points += 3000
+        self.startsNextRound = False
     
     def giveFaction(self, faction):
         self.faction = faction
@@ -61,3 +64,9 @@ class Player:
             return "can reset"
         else:
             return "can't reset"
+
+    def checkIfPlayerStarts(self):
+        return self.startsNextRound
+
+    def setStartingPlayer(self):
+        self.startsNextRound = True
