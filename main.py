@@ -117,8 +117,7 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
             selectedPlayer.subtractPoints(int(subtractedPoints))
 
         elif underMenuInput == "2":
-            print(str(selectedPlayer.getName()) + " wins!")
-            if selectedPlayer.getWins() == 5:
+            if selectedPlayer.getWins() == maxWins:
                 print(str(selectedPlayer.getName()) + " wins the game!")
                 userInput = input("Continue? \n[0]: Yes \n[1] No")
                 if userInput == "1":
