@@ -94,7 +94,7 @@ def Wheel_Of_Losers(player, enemy):
         Wheel_Of_Units([player], 5, "small", 2)
     elif rnumber == 7:
         player.addPoints(500)
-        player.giveFaction("Special")
+        player.giveFaction("Secret")
         player.setReset(True)
 
     time.sleep(3)

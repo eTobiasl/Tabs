@@ -35,16 +35,18 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         input("-- Press enter to continue --\n")
     
     elif userInput == "1":
-        print("")
+        print("\nStarting round ["+str(p1.getWins() + p2.getWins())+"]...")
+        time.sleep(1)
+        print("\n== Wheels ==")
         gamerule = "nothing"
         while not p1.getFaction():
             gamerule = Wheel_Of_Warriors(p1, p2)
         while not p2.getFaction():
             gamerule = Wheel_Of_Warriors(p2, p1)
 
-        print("\nThe current gamerule is '" + str(gamerule) + "'")
+        print("\n== Gamerule ==\nThe current gamerule is '" + str(gamerule) + "'")
 
-        print("\n" + str(p1.getName()) + " has " + str(p1.getPoints()) + " points, " + str(p1.getReset()) + ", can choose from '" + str(p1.getFaction()) + "', and needs to place: ")
+        print("\n== Summary ==\n" + str(p1.getName()) + " has " + str(p1.getPoints()) + " points, " + str(p1.getReset()) + ", can choose from '" + str(p1.getFaction()) + "', and needs to place: ")
         p1Units = p1.getUnits()
         if len(p1Units) > 0:
             for unit in p1.getUnits():
@@ -61,9 +63,9 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
             print("Nothing in particular")
         
         if p1.checkIfPlayerStarts():
-            print("\n["+p1.getName()+"] has to place their units first")
+            print("\n--> ["+p1.getName()+"] has to place their units first")
         elif p2.checkIfPlayerStarts():
-            print("\n["+p2.getName()+"] has to place their units first")
+            print("\n--> ["+p2.getName()+"] has to place their units first")
 
         roundEndInput = input("-- Round over? press enter to continue --\n")
 
@@ -98,38 +100,47 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         print("[0] - Add Points\n[1] - Subtract Points\n[2] - Add Win")
         underMenuInput = input("Select from the submenu:\n")
 
-        print("\n[0] - Player 1 ("+p1.getName()+")\n[1] - Player 2 ("+p2.getName()+")")
-        selectedPlayerInput = input("Select which player to affect:\n")
+        if underMenuInput != "":
+            print("\n[0] - Player 1 ("+p1.getName()+")\n[1] - Player 2 ("+p2.getName()+")")
+            selectedPlayerInput = input("Select which player to affect:\n")
 
-        if selectedPlayerInput == "0":
-            selectedPlayer = p1
-            otherPlayer = p2
-        elif selectedPlayerInput == "1":
-            selectedPlayer = p2
-            otherPlayer = p1
+            if selectedPlayerInput == "0" or selectedPlayerInput == "1":
+                if selectedPlayerInput == "0":
+                    selectedPlayer = p1
+                    otherPlayer = p2
+                elif selectedPlayerInput == "1":
+                    selectedPlayer = p2
+                    otherPlayer = p1
+            
+                if underMenuInput == "0":
+                    addedPoints = input("\nAdd points ("+selectedPlayer.getName()+"):\n")
+                    selectedPlayer.addPoints(int(addedPoints))
+                
+                elif underMenuInput == "1":
+                    subtractedPoints = input("\nSubtract points ("+selectedPlayer.getName()+"):\n")
+                    selectedPlayer.subtractPoints(int(subtractedPoints))
 
-        if underMenuInput == "0":
-            addedPoints = input("\nAdd points ("+selectedPlayer.getName()+"):\n")
-            selectedPlayer.addPoints(int(addedPoints))
-        
-        elif underMenuInput == "1":
-            subtractedPoints = input("\nSubtract points ("+selectedPlayer.getName()+"):\n")
-            selectedPlayer.subtractPoints(int(subtractedPoints))
+                elif underMenuInput == "2":
+                    if selectedPlayer.getWins() == maxWins:
+                        print(str(selectedPlayer.getName()) + " wins the game!")
+                        userInput = input("Continue? \n[0]: Yes \n[1] No")
+                        if userInput == "1":
+                            print("Exiting...")
+                            break
+                    else:
+                        selectedPlayer.addWin()
+                        otherPlayer.addLoss()
+                        runWheel = input("- Press [0] to run the wheel of losers, otherwise press enter -\n")
+                        lastloss = otherPlayer
 
-        elif underMenuInput == "2":
-            if selectedPlayer.getWins() == maxWins:
-                print(str(selectedPlayer.getName()) + " wins the game!")
-                userInput = input("Continue? \n[0]: Yes \n[1] No")
-                if userInput == "1":
-                    print("Exiting...")
-                    break
+                        if runWheel == "0":
+                            time.sleep(1)
+                            Wheel_Of_Losers(otherPlayer, selectedPlayer)
             else:
-                selectedPlayer.addWin()
-                otherPlayer.addLoss()
+                print("\n- No player selected, returning to menu - ")
+        else:
+            print("\n- No option selected, returning to menu - ")
 
-                time.sleep(1)
-                Wheel_Of_Losers(otherPlayer, selectedPlayer)
-                lastloss = otherPlayer
 
     elif userInput == "3":
         print("Exiting...")
@@ -141,4 +152,8 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         else:
             print(p2.getName() + " Won most rounds with [" + str(p2.getWins()) + "] wins!")
         break
+
+    else:
+        print("\n- No option selected, please input a menu option to continue -") 
+
 

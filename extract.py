@@ -33,7 +33,7 @@ for i in range(0, len(data)-1):
         elif cost <= 6000:
             level = 4
             hugelist.append([name, faction, cost, level])
-        if faction == "Special":
+        if faction == "Secret":
             speciallist.append([name, faction, cost, level])
 
         unitlist.append([name, faction, cost, level])
