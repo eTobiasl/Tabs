@@ -18,13 +18,17 @@ if startingPlayer == 0:
 else:
     p2.setStartingPlayer()
 
+maps = ["TRIBAL 1","TRIBAL 2","TRIBAL SANDBOX","FARMER 1","FARMER 2","MEDIEVAL 1","MEDIEVAL 2","ANCIENT 1","ANCIENT 2","ANCIENT SANDBOX","VIKING","VIKING SANDBOX","DYNASTY","RENEISSANCE","PIRATE","SPOOKY 1","SPOOKY 2","WILD WEST","LEGACY","FANTASY GOOD","FANTASY EVIL","FARMER SNOW"]
+rnumber = random.randrange(0, len(maps))
+selectedMap = maps[rnumber]
+
 
 maxWins = int(input("How many rounds to win?\n"))
 
 
 while p1.getWins() < maxWins and p2.getWins() < maxWins:
     print("\n"*2+"="*30+" Menu "+"="*30+"\n"*2)
-    print("Round ["+str(p1.getWins() + p2.getWins())+"]")
+    print("Round ["+str(p1.getWins() + p2.getWins()+1)+"/"+str(maxWins)+"]")
     print("[0] - Display info\n[1] - Start round\n[2] - More Options\n[3] - End Game")
     
     userInput = input("Select from the menu:\n")
@@ -35,7 +39,10 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         input("-- Press enter to continue --\n")
     
     elif userInput == "1":
-        print("\nStarting round ["+str(p1.getWins() + p2.getWins())+"]...")
+        if p1.getWins() + p2.getWins() == 0:
+            print("\n== Map ==\n"+selectedMap+"\n")
+            input("-- Press enter to continue --\n")
+        print("\nStarting round ["+str(p1.getWins() + p2.getWins()+1)+"/"+str(maxWins)+"]...")
         time.sleep(1)
         print("\n== Wheels ==")
         gamerule = "nothing"
@@ -63,11 +70,11 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
             print("Nothing in particular")
         
         if p1.checkIfPlayerStarts():
-            print("\n--> ["+p1.getName()+"] has to place their units first")
+            print("\n-> ["+p1.getName()+"] has to place their units first")
         elif p2.checkIfPlayerStarts():
-            print("\n--> ["+p2.getName()+"] has to place their units first")
+            print("\n-> ["+p2.getName()+"] has to place their units first")
 
-        roundEndInput = input("-- Round over? press enter to continue --\n")
+        roundEndInput = input("\n-- Round over? press enter to continue --\n")
 
         p1.resetFaction()
         p2.resetFaction()
