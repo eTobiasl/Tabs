@@ -25,26 +25,13 @@ maxWins = int(input("How many rounds to win?\n"))
 while p1.getWins() < maxWins and p2.getWins() < maxWins:
     print("\n"*2+"="*30+" Menu "+"="*30+"\n"*2)
     print("Round ["+str(p1.getWins() + p2.getWins())+"]")
-    print("[0] - Display info\n[1] - Start round\n[2] - Add Points\n[3] - Subtract Points\n[4] - Add Win\n[5] - End Game")
+    print("[0] - Display info\n[1] - Start round\n[2] - More Options\n[3] - End Game")
     
     userInput = input("Select from the menu:\n")
 
-    if userInput == "0" or userInput == "5" or userInput == "1":
-        selectedPlayerInput = "0"
-    else:
-        print("\n[0] - Player1 ("+p1.getName()+")\n[1] - Player2 ("+p2.getName()+")")
-        selectedPlayerInput = input("Select which player to affect:\n")
-
-    if selectedPlayerInput == "0":
-        selectedPlayer = p1
-        otherPlayer = p2
-    elif selectedPlayerInput == "1":
-        selectedPlayer = p2
-        otherPlayer = p1
-
     if userInput == "0":
-        print("\n== "+selectedPlayer.getName()+" ==\nPoints: "+str(selectedPlayer.getPoints())+"\nWins: "+str(selectedPlayer.getWins())+"\nLosses: "+str(selectedPlayer.getLosses()))
-        print("\n== "+otherPlayer.getName()+" ==\nPoints: "+str(otherPlayer.getPoints())+"\nWins: "+str(otherPlayer.getWins())+"\nLosses: "+str(otherPlayer.getLosses()))
+        print("\n== "+p1.getName()+" ==\nPoints: "+str(p1.getPoints())+"\nWins: "+str(p1.getWins())+"\nLosses: "+str(p1.getLosses()))
+        print("\n== "+p2.getName()+" ==\nPoints: "+str(p2.getPoints())+"\nWins: "+str(p2.getWins())+"\nLosses: "+str(p2.getLosses()))
         input("-- Press enter to continue --\n")
     
     elif userInput == "1":
@@ -107,30 +94,45 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         lastloss = roundLoserPlayer
 
     elif userInput == "2":
-        addedPoints = input("\nAdd points ("+selectedPlayer.getName()+"):\n")
-        selectedPlayer.addPoints(int(addedPoints))
-    
+        print("\n"*2+"="*30+" Submenu "+"="*30+"\n"*2)
+        print("[0] - Add Points\n[1] - Subtract Points\n[2] - Add Win")
+        underMenuInput = input("Select from the submenu:\n")
+
+        print("\n[0] - Player 1 ("+p1.getName()+")\n[1] - Player 2 ("+p2.getName()+")")
+        selectedPlayerInput = input("Select which player to affect:\n")
+
+        if selectedPlayerInput == "0":
+            selectedPlayer = p1
+            otherPlayer = p2
+        elif selectedPlayerInput == "1":
+            selectedPlayer = p2
+            otherPlayer = p1
+
+        if underMenuInput == "0":
+            addedPoints = input("\nAdd points ("+selectedPlayer.getName()+"):\n")
+            selectedPlayer.addPoints(int(addedPoints))
+        
+        elif underMenuInput == "1":
+            subtractedPoints = input("\nSubtract points ("+selectedPlayer.getName()+"):\n")
+            selectedPlayer.subtractPoints(int(subtractedPoints))
+
+        elif underMenuInput == "2":
+            print(str(selectedPlayer.getName()) + " wins!")
+            if selectedPlayer.getWins() == 5:
+                print(str(selectedPlayer.getName()) + " wins the game!")
+                userInput = input("Continue? \n[0]: Yes \n[1] No")
+                if userInput == "1":
+                    print("Exiting...")
+                    break
+            else:
+                selectedPlayer.addWin()
+                otherPlayer.addLoss()
+
+                time.sleep(1)
+                Wheel_Of_Losers(otherPlayer, selectedPlayer)
+                lastloss = otherPlayer
+
     elif userInput == "3":
-        subtractedPoints = input("\nSubtract points ("+selectedPlayer.getName()+"):\n")
-        selectedPlayer.subtractPoints(int(subtractedPoints))
-
-    elif userInput == "4":
-        print(str(selectedPlayer.getName()) + " wins!")
-        if selectedPlayer.getWins() == 5:
-            print(str(selectedPlayer.getName()) + " wins the game!")
-            userInput = input("Continue? \n[0]: Yes \n[1] No")
-            if userInput == "1":
-                print("Exiting...")
-                break
-        else:
-            selectedPlayer.addWin()
-            otherPlayer.addLoss()
-
-            time.sleep(1)
-            Wheel_Of_Losers(otherPlayer, selectedPlayer)
-            lastloss = otherPlayer
-
-    elif userInput == "5":
         print("Exiting...")
         print("\n"+p1.getName() + "Ended the game with ["+ str(p1.getWins()) + "] wins and [" + str(p1.getLosses()) + "] lossses")
         print(p2.getName() + "Ended the game with ["+ str(p2.getWins()) + "] wins and [" + str(p2.getLosses()) + "] lossses")
