@@ -8,7 +8,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+<!-- [![MIT License][license-shield]][license-url] -->
 
 
 
@@ -16,10 +16,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/eTobiasl/Tabs">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="ProjectPhoto.jpg" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Tabs Point Counter</h3>
+<h3 align="center">TABS Multiplayer Assistant</h3>
 
   <p align="center">
     A tool to assist one in playing TABS with 2 players
@@ -114,7 +114,7 @@ Don't forget to give the project a star! Thanks again!
 [issues-shield]: https://img.shields.io/github/issues/eTobiasl/Tabs.svg?style=for-the-badge
 [issues-url]: https://github.com/eTobiasl/Tabs/issues
 [license-shield]: https://img.shields.io/github/license/eTobiasl/Tabs.svg?style=for-the-badge
-[license-url]: https://github.com/eTobiasl/Tabs/blob/master/LICENSE.txt
+[license-url]: https://github.com/eTobiasl/Tabs/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/erikTobiasLeirvik
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: ProjectPhoto.jpg
