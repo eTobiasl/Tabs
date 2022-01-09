@@ -1,3 +1,6 @@
+# ===== DOC =====
+# The class that houses methods to run all wheels 
+
 import random
 from extract import *
 import time

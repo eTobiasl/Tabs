@@ -1,3 +1,6 @@
+# ===== DOC =====
+# The main file, run this file to start the program 
+
 from Player import Player
 from wheels import *
 import random

@@ -1,3 +1,6 @@
+# ===== DOC =====
+# The class that keeps track of all information pertaining to players and their stats
+
 class Player:
 
     def __init__(self, name):
