@@ -15,7 +15,7 @@ class Player:
 
     def getPoints(self):
         return self.points
-
+    
     def getName(self):
         return self.name
 
@@ -28,6 +28,9 @@ class Player:
     def addPoints(self, addedPoints):
         self.points += addedPoints
 
+    def setPoints(self, newTotal):
+        self.points = newTotal
+
     def subtractPoints(self, subtractedPoints):
         self.points -= subtractedPoints
 
@@ -35,12 +38,24 @@ class Player:
         self.wins += 1
         self.points += 2500
         self.startsNextRound = True
-
+    
     def addLoss(self):
         self.losses += 1
         self.points += 3000
         self.startsNextRound = False
     
+    def addWinWithoutExtras(self):
+        self.wins += 1
+
+    def addLossWithoutExtras(self):
+        self.losses += 1
+
+    def setWins(self, newTotal):
+        self.wins = newTotal
+
+    def setLosses(self, newTotal):
+        self.losses = newTotal
+
     def giveFaction(self, faction):
         self.faction = faction
     
