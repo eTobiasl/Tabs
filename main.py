@@ -31,7 +31,7 @@ maxWins = int(input("How many rounds to win?\n"))
 
 while p1.getWins() < maxWins and p2.getWins() < maxWins:
     print("\n"*2+"="*30+" Menu "+"="*30+"\n"*2)
-    print("Round ["+str(p1.getWins() + p2.getWins()+1)+"/"+str(maxWins)+"]")
+    print("Round ["+str(p1.getWins() + p2.getWins()+1)+"]")
     print("[0] - Display info\n[1] - Start round\n[2] - More Options\n[3] - End Game")
     
     userInput = input("Select from the menu:\n")
@@ -45,7 +45,7 @@ while p1.getWins() < maxWins and p2.getWins() < maxWins:
         if p1.getWins() + p2.getWins() == 0:
             print("\n== Map ==\n"+selectedMap+"\n")
             input("-- Press enter to continue --\n")
-        print("\nStarting round ["+str(p1.getWins() + p2.getWins()+1)+"/"+str(maxWins)+"]...")
+        print("\nStarting round ["+str(p1.getWins() + p2.getWins()+1)+"]...")
         time.sleep(1)
         print("\n== Wheels ==")
         gamerule = "nothing"
